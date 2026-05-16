@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
+import { loadEnv } from "./loadEnv.js";
 
-dotenv.config();
+loadEnv();
 
 const requiredEnvVars = ["PORT", "MONGO_URI"] as const;
 

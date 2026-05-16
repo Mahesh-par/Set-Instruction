@@ -1,14 +1,13 @@
 import { spawn } from "node:child_process";
 
-import dotenv from "dotenv";
-
 import {
   getChromeExecutablePath,
   getChromeSessionDir,
   getClaudeLoginUrl
 } from "../config/browserSession.js";
+import { loadEnv } from "../config/loadEnv.js";
 
-dotenv.config();
+loadEnv();
 
 const loginClaude = async (): Promise<void> => {
   const executablePath = getChromeExecutablePath();
