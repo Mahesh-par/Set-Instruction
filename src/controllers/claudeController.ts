@@ -1,6 +1,10 @@
 import type { Request, Response } from "express";
 
 import { openClaudeInstructionsPopup } from "../services/claudeAutomationService.js";
+import {
+  getSavedInstruction,
+  saveInstruction
+} from "../services/instructionService.js";
 import { ApiError } from "../utils/ApiError.js";
 
 type OpenInstructionsBody = {
@@ -34,6 +38,37 @@ const validateInstruction = (value: unknown): string => {
   }
 
   return value;
+};
+
+type SaveInstructionBody = {
+  instruction?: unknown;
+};
+
+export const getInstruction = async (
+  _req: Request,
+  res: Response
+): Promise<void> => {
+  const savedInstruction = await getSavedInstruction();
+
+  res.status(200).json({
+    success: true,
+    message: "Instruction fetched successfully",
+    data: savedInstruction
+  });
+};
+
+export const saveInstructionText = async (
+  req: Request<unknown, unknown, SaveInstructionBody>,
+  res: Response
+): Promise<void> => {
+  const instruction = validateInstruction(req.body.instruction);
+  const savedInstruction = await saveInstruction(instruction);
+
+  res.status(200).json({
+    success: true,
+    message: "Instruction saved successfully",
+    data: savedInstruction
+  });
 };
 
 export const openInstructions = async (

@@ -1,26 +1,27 @@
 {
-  "name": "set-instructions-backend",
-  "version": "1.0.0",
-  "description": "Modern Node.js, Express, TypeScript, and MongoDB backend starter.",
-  "type": "module",
-  "main": "dist/server.js",
-  "scripts": {
-    "login": "tsx src/scripts/loginClaude.ts",
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
-  },
-  "keywords": [
-    "nodejs",
-    "express",
-    "typescript",
-    "mongodb",
-    "mongoose"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
+  "name": "set-instructions-backend",                                                                                                    
+  "version": "1.0.0",                                                                                                    
+  "description": "Modern Node.js, Express, TypeScript, and MongoDB backend starter.",                                                                                                    
+  "type": "module",                                                                                                    
+  "main": "dist/server.js",                                                                                                    
+  "scripts": {                                                                                                    
+    "login": "tsx src/scripts/loginClaude.ts",                                                                                                    
+    "dev": "tsx watch src/server.ts",                                                                                                    
+    "build": "tsc",                                                                                                    
+    "start": "node dist/server.js"                                                                                                    
+  },                                                                                                    
+  "keywords": [                                                                                                    
+    "nodejs",                                                                                                    
+    "express",                                                                                                    
+    "typescript",                                                                                                    
+    "mongodb",                                                                                                    
+    "mongoose"                                                                                                    
+  ],                                                                                                    
+  "author": "",                                                                                                    
+  "license": "ISC",                                                                                                    
+  "dependencies": {                                                                                                    
+    "@notionhq/client": "^5.21.0",                                                                                                    
+    "cors": "^2.8.5",                                                                                                    
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",

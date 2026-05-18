@@ -7,6 +7,7 @@ import { errorHandler } from "./middleware/errorHandler.js";
 import { notFoundHandler } from "./middleware/notFoundHandler.js";
 import claudeRoutes from "./routes/claudeRoutes.js";
 import healthRoutes from "./routes/healthRoutes.js";
+import notionRoutes from "./routes/notionRoutes.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(morgan("dev"));
 
 app.use("/health", healthRoutes);
 app.use("/api/claude", claudeRoutes);
+app.use("/api/notion", notionRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
